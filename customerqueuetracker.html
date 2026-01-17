@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="/customerqueuetracker.css">
+
+    <title>CUSTOMER QUEUE TRACKER</title>
+
+</head>
+
+<body>
+
+    <div>
+        <div class="top-bar">
+        <div class="header">
+        <div class="header-icon">
+        <img src="/IMAGES/groupicon.png" alt="">
+        </div>
+        <div class="header-text">
+        <h1 style="color: black;">CUSTOMER QUEUE TRACKER</h1>
+        <p>Manage your customer queue effectively</p>
+        </div>
+        </div>
+       <button id="addCustomerBtn" class="add-btn">
+        <span class="btn-icon"><img src="/IMAGES/addicon.png" alt=""></span>
+        <span class="btn-text">Add Customer</span>
+       </button>
+       </div>
+
+        <section class="data">
+            <div class="data-Card" style="background-color: #d9e4f3;">
+            <div class="data-icon">  
+            <img src="/IMAGES/timericon.png"alt="">
+            </div>
+            <div class="data-text">
+                <h2 class="data-value" style="color: #1E3A8A;" id="waitingCount">0</h2>
+                <p class="data-status">Waiting</p>
+            </div>
+            </div>
+
+            <div class="data-Card" style="background-color: #FFF4E5;">
+                <div class="data-icon">
+                <img src="/IMAGES/supporticon.png"alt="">
+                </div>
+                <div class="data-text">
+                <h2 class="data-value" style="color: #92400E;" id="inServiceCount">0</h2>
+                <p class="data-status">In Service</p>
+                </div>
+            </div>
+
+            <div class="data-Card" style="background-color: #ECFDF5;">
+                <div class="data-icon">
+                <img src="/IMAGES/completeicon.png"alt="">
+                </div>
+                <div class="data-text">
+                <h2 class="data-value" id="completedCount" style="color: #065F46;">0</h2>
+                <p class="data-status">Completed</p>
+                </div>
+            </div>
+
+            <div class="data-Card" style="background-color: #F3E8FF;">
+                <div class="data-icon">
+                <img src="/IMAGES/trendicon.png"alt="">
+                </div>
+                <div class="data-text">
+                <h2 class="data-value" id="averageWaitTime" style="font-size: 30px; color: #6B21A8;">0m 00s</h2>
+                <p class="data-status">Avg Wait(min)</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="customer-status">
+            <button class="button-status active" data-status="waiting">
+                waiting (<span id="waitingBtnCount">0</span>)
+            </button>
+            <button class="button-status" data-status="inService">
+                In Service (<span id="inServiceBtnCount">0</span>)
+            </button>
+            <button class="button-status" data-status="completed">
+                completed (<span id="completedBtnCount">0</span>)
+            </button>
+        </div>
+
+        <div class="customer-database">
+        <p class="blank-text" id="defaultMessage" style="display: none;"></p>
+            <div id="customerList"></div>
+        </div>
+
+        <div id="customer-details-form" class="hidden">
+            <div class="customer-details">
+                <button class="close-btn" aria-label="close form">&times;</button>
+                <h2>Add Customer to Queue</h2>
+                <form id="customerForm">
+                    <label for="customerName">Customer Name:</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Enter Name">
+                    <label for="customerContact">Phone Number:</label>
+                    <input type="text" id="customerContact" name="customerContact" required placeholder="Enter Phone Number">
+                    <label for="groupSize">Group Size:</label>
+                    <input type="number" id="groupSize" name="groupSize" required>
+                    <div class="form-actions">
+                    <button type="submit" class="submit-btn" style="background: black; color: white;">Add To Queue</button>
+                    <button type="button" class="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/customerqueuetracker.js"></script>
+
+</body>
+
+</html>
+
+
+ 
+
+   
