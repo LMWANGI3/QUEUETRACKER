@@ -309,9 +309,8 @@ body{
     color: #2563eb;
 }
 
-.status .inService{
-    background: #e6f7ed;
-    color: #15803d;
+.customer-status-time .status-btn.inservice{
+    background-color: #15803d;
 }
 
 .status .completed{
@@ -365,7 +364,7 @@ body{
 }
 
 .status-btn.in-service{
-    background-color: #3498db;
+    background-color: #88badb;
 }
 
 .status-btn.completed{
@@ -389,8 +388,8 @@ body{
     cursor: pointer;
 }
 
-.remove.btn{
-     background: #000;
+.remove-btn{
+    background: #000;
     color: #fff;
     border: none;
     padding: 8px 15px;
