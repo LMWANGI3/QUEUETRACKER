@@ -80,8 +80,8 @@ function showCustomerList(){
         <div class="customer-info">
         <h3 class ="customer-name">${customer.name}</h3>
         <div class="customer-meta">
-        <span class="contact"><img src="/IMAGES/callicon.png" alt="Contact" class="contact-img">${customer.contact}</span>
-        <span class="group"><img src="/IMAGES/group2icon.png" alt="Group" class="group-img"> ${customer.groupSize}person(s)</span>
+        <span class="contact"><img src="IMAGES/callicon.png" alt="Contact" class="contact-img">${customer.contact}</span>
+        <span class="group"><img src="IMAGES/group2icon.png" alt="Group" class="group-img"> ${customer.groupSize}person(s)</span>
         </div>
 
         <div class="customer-status-time">
