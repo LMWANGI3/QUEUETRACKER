@@ -94,7 +94,7 @@ function showCustomerList(){
             `<p><strong>Completed:</strong>${new Date(customer.completedAt).toLocaleTimeString()}</p>`:''}
         </div>
          <div class="card-buttons">
-        ${customer.status === 'waiting'?
+         ${customer.status === 'waiting'?
         `<button class="serve-btn" data-ticket="${customer.ticket}">Serve Now</button>`:''}
         ${customer.status === 'waiting'?
         `<button class="cancel-btn" data-ticket="${customer.ticket}">X</button>`:''}
@@ -229,23 +229,28 @@ document.addEventListener('click', function(e){   //this runs whenever there's a
       const status = e.target.dataset.status;      //gets the value of the data status attribute of the clicked button
       currentStatus = status;   //this updates the currently selected status to the one the user just clicked
       setStatusActive(status);  //this highlights the clicked button
-      showCustomerList(); //shows the customers with the cusrrent status
+      showCustomerList();//shows the customers with the current status
+      return; 
     }
     if(e.target.classList.contains('remove-btn')){  //this function checks if the clicked element is remove button
     const ticket = e.target.dataset.ticket;
     removeCustomer(ticket); //removes that specific customer
+    return;
    }
     if(e.target.classList.contains('serve-btn')){   //this function check if the clicked element is serve now button
     const ticket = e.target.dataset.ticket;  //uses the closest customer card to find which customer the card belong to then gets its ticket.
-    serveCustomer(ticket);   //transfers the particular customer for that ticket number to inservice
+    serveCustomer(ticket); //transfers the particular customer for that ticket number to inservice
+    return;  
    }
    if(e.target.classList.contains('cancel-btn')){   //this function checks if the clicked element is cancel button
     const ticket = e.target.dataset.ticket;    
-    cancelCustomer(ticket);    //removes that specific customer for that particular ticket number.
+    cancelCustomer(ticket);  //removes that specific customer for that particular ticket number.
+    return;  
    }
    if(e.target.classList.contains('complete-btn')){  //this function checks if the clicked element is complete button.
     const ticket = e.target.dataset.ticket; //uses the closest customer card for find which customer the card belong to then gets its ticket
-    completedCustomer(ticket);  //this marks the customer completed
+    completedCustomer(ticket); //this marks the customer completed
+    return; 
    }
 });
 
